@@ -1,12 +1,12 @@
 
-name: Deploy Deutsch Quest v337 to GitHub Pages
+name: Deploy Deutsch Quest v338 to GitHub Pages
 
 on:
   push:
     branches:
       - main
     paths:
-      - 'Deutsch_Quest_v337_Final_End_to_End_Audit_A1-B1.zip'
+      - 'Deutsch_Quest_v338_Progress_Backup_Extraction.zip'
       - '.github/workflows/deploy.yml'
   workflow_dispatch:
 
@@ -32,8 +32,9 @@ jobs:
       - name: Extract and validate Deutsch Quest
         run: |
           mkdir -p site
-          unzip -q "Deutsch_Quest_v337_Final_End_to_End_Audit_A1-B1.zip" -d site
+          unzip -q "Deutsch_Quest_v338_Progress_Backup_Extraction.zip" -d site
           test -f site/index.html
+          test -f site/backup.html
           test -f site/sw.js
           test -f site/manifest.webmanifest
           test -d site/icons
